@@ -1,0 +1,63 @@
+[
+    {
+      "class": "1",
+      "subject": "Science",
+      "topic": "What is Water?",
+      "script": "Water is a liquid that we drink to stay alive. It is found in rivers, lakes, and the ocean."
+    },
+    {
+      "class": "2",
+      "subject": "Math",
+      "topic": "Addition Basics",
+      "script": "Addition means putting numbers together. For example, 2 + 3 = 5."
+    },
+    {
+      "class": "3",
+      "subject": "History",
+      "topic": "Who was Mahatma Gandhi?",
+      "script": "Mahatma Gandhi was a leader who helped India get independence using non-violence."
+    },
+    {
+      "class": "4",
+      "subject": "English",
+      "topic": "Nouns",
+      "script": "A noun is a word that names a person, place, or thing. Example: Dog, India, Book."
+    },
+    {
+      "class": "5",
+      "subject": "Science",
+      "topic": "What is Gravity?",
+      "script": "Gravity is the force that pulls things towards the Earth. It is why we don’t float away!"
+    },
+    {
+      "class": "6",
+      "subject": "Math",
+      "topic": "Multiplication Basics",
+      "script": "Multiplication is repeated addition. Example: 3 × 4 means 3 added 4 times, which is 12."
+    },
+    {
+      "class": "7",
+      "subject": "Geography",
+      "topic": "What are Continents?",
+      "script": "The Earth is divided into seven large land masses called continents. Example: Asia, Africa."
+    },
+    {
+      "class": "8",
+      "subject": "Physics",
+      "topic": "Newton’s First Law",
+      "script": "An object will stay at rest or keep moving unless a force acts on it. This is called Inertia."
+    },
+    {
+      "class": "9",
+      "subject": "Chemistry",
+      "topic": "What is an Atom?",
+      "script": "An atom is the smallest unit of matter. Everything around us is made of atoms."
+    },
+    {
+      "class": "10",
+      "subject": "Economics",
+      "topic": "What is Supply and Demand?",
+      "script": "When demand is high and supply is low, prices go up. When supply is high and demand is low, prices drop."
+    }
+  ]
+  

@@ -1,0 +1,9 @@
+POST http://localhost:5000/api/scripts
+Content-Type: application/json
+
+{
+  "class": "5",
+  "subject": "Science",
+  "topic": "Gravity",
+  "script": "Gravity is a force that pulls everything toward the center of the Earth."
+}
