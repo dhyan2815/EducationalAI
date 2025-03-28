@@ -1,8 +1,9 @@
 require("dotenv").config();
 const axios = require("axios");
 const fs = require("fs");
+const path = require("path");
 
-const API_KEY = process.env.ELEVENLABS_API_KEY; 
+const API_KEY = process.env.ELEVENLABS_API_KEY;
 const VOICE_ID = "21m00Tcm4TlvDq8ikWAM";
 
 async function convertTextToSpeech(text, filename) {
@@ -11,7 +12,7 @@ async function convertTextToSpeech(text, filename) {
       `https://api.elevenlabs.io/v1/text-to-speech/${VOICE_ID}`,
       {
         text: text,
-        voice: "Rachel", // Change voice if needed
+        voice: "Rachel",
         model_id: "eleven_monolingual_v1",
       },
       {
@@ -23,12 +24,12 @@ async function convertTextToSpeech(text, filename) {
       }
     );
 
-    fs.writeFileSync(`output/${filename}.mp3`, response.data, "binary");
-    console.log(`✅ Audio file saved: output/${filename}.mp3`);
+    const filePath = path.join(__dirname, "output", `${filename}.mp3`);
+    fs.writeFileSync(filePath, response.data, "binary");
+    console.log(`✅ Audio file saved: ${filePath}`);
   } catch (error) {
-    console.error("❌ Error:", error.response.data);
+    console.error("❌ Error:", error.response?.data || error.message);
   }
 }
 
-// Example Usage
-convertTextToSpeech("Gravity is the force that pulls things towards Earth.", "gravity-lesson");
+module.exports = { convertTextToSpeech };

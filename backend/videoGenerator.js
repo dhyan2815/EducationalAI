@@ -1,17 +1,15 @@
 require("dotenv").config();
 const axios = require("axios");
 const fs = require("fs");
+const path = require("path");
 
-const API_KEY = process.env.RUNWAY_API_KEY; 
+const API_KEY = process.env.RUNWAY_API_KEY;
 
 async function generateVideo(prompt, filename) {
   try {
     const response = await axios.post(
       "https://api.runwayml.com/v1/gen2/video",
-      {
-        prompt: prompt,
-        duration: 5, // Video length in seconds
-      },
+      { prompt: prompt, duration: 5 },
       {
         headers: {
           "Authorization": `Bearer ${API_KEY}`,
@@ -25,12 +23,12 @@ async function generateVideo(prompt, filename) {
 
     // Download the video file
     const videoResponse = await axios.get(videoUrl, { responseType: "arraybuffer" });
-    fs.writeFileSync(`output/${filename}.mp4`, videoResponse.data);
-    console.log(`✅ Video saved: output/${filename}.mp4`);
+    const filePath = path.join(__dirname, "output", `${filename}.mp4`);
+    fs.writeFileSync(filePath, videoResponse.data);
+    console.log(`✅ Video saved: ${filePath}`);
   } catch (error) {
-    console.error("❌ Error:", error.response.data);
+    console.error("❌ Error:", error.response?.data || error.message);
   }
 }
 
-// Example Usage
-generateVideo("A simple animated explanation of gravity.", "gravity-lesson");
+module.exports = { generateVideo };
