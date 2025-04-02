@@ -1,1 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 @import "tailwindcss";
+
+.lexend-deca {
+    font-family: "Lexend Deca", sans-serif;
+}
+
+.space-mono {
+    font-family: "Space Mono", monospace;
+}

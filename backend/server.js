@@ -1,4 +1,3 @@
-require("dotenv").config();
 const express = require("express");
 const router = express.Router();
 const mongoose = require("mongoose");
@@ -108,3 +107,8 @@ app.listen(PORT, () =>
 );
 
 module.exports = router;
+
+// just to send the api request from backend to frontend
+app.get('/api/config', (req, res) => {
+  res.json({ geminiApiKey: process.env.GEMINI_API_KEY });
+});
